@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: detector-api
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://dbpostgresql:5432/detector_api
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+  liquibase:
+    change-log: classpath:changelog/detection.changelog.xml
+
+detector.configuration:
+  limit_value_for_humans: 1
+  valid_number_sequence: 4
+  with_special_case: true
