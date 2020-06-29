@@ -13,19 +13,15 @@ mvn package
 git clone https://github.com/Roldanhollow/detector-api.git
 cd detector-api
 docker-compose up --build
-Luego de iniciado de clic [aquí](http://localhost:8080) para cerciorar que el API en ambiente local ha sido desplegado
 ```
 
-- ** Jacoco **
->> [x] Cobertura: 0.80
->> [x] Reporte: /target/site/jacoco/index.html 
-
 ## Endpoints del API
+<i>NOTA: La aplicación ha sido desplegada en [https://detector--api.herokuapp.com](https://detector--api.herokuapp.com/) para facilitar el llamado de los endpoints</i>
 - [X] `Detector de mutantes`: Permite conocer mediante el ADN si una persona es mutante o no. Su endpoint es:
 ```/mutant [POST]```
 ``` json
 {
-"dna":[<...>]
+"dna":[<Array de String>]
 }
 ```
 Donde `dna` representa cada fila de una tabla de NxN con la secuencia del ADN. Retorna OK-200 si es un mutante, en otro caso, 403-Forbidden.
@@ -42,6 +38,10 @@ Obtendrá una respuesta de este tipo:
     "count_human_dna": <int>
 }
 ```
+
+### Jacoco
+- [x] Cobertura: 0.80
+- [x] Reporte: /target/site/jacoco/index.html 
 
 #### Herramientas
 En esta API se usó lo siguiente:
